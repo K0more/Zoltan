@@ -13,8 +13,8 @@ messageBox.addEventListener("keyup", function (e) {
     sanitized = sanitizeHTML(messageText)
     previewBox.innerHTML = `Preview: <br> ${renderTex(sanitized)}`
     if (messageBox.value.trim() == ""){
-        console.log("match found")
         messageBox.value = ""
+        messageBox.style.height = "2rem"
         previewBox.style.display = "none";
         previewBox.innerHTML = "";
     }
@@ -78,6 +78,14 @@ function showSource(inp){
     } else {
         sourcediv.style.display = "none"
     }
+}
+
+function textAreaAdjust(element){
+    if(element.value.split("\n").length < 2){
+        return
+    }
+    element.style.height = "1px"
+    element.style.height = (25+element.scrollHeight)+"px";
 }
 
 messageBox.addEventListener("keypress", keyPressHandler)

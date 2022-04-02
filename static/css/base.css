@@ -75,6 +75,8 @@ body{
 .source{
     display: none;
     font-family: monospace;
+    margin-top: 0.2rem;
+    margin-bottom: 0.4rem;
 }
 /* Interactions div */
 .interactions{
@@ -86,12 +88,18 @@ body{
     height: 2rem;
     padding: 2px;
     font-family: 'Courier New', Courier, monospace;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.2rem;
+    padding: 0.3rem;
+    max-height: 8rem;
+    overflow: auto;
 }
 
 #previewBox{
     display: none;
     min-height: 50px;
-    max-height: 100px;
+    max-height: 8rem;
     overflow: auto;
     padding: 2rem;
     padding-top: 0;
