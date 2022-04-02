@@ -1,5 +1,5 @@
-from typing import final
 import handlers
+from starlette.responses import FileResponse
 from fastapi import FastAPI, HTTPException, Request, WebSocket, WebSocketDisconnect
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
@@ -24,6 +24,10 @@ fake_db = {
 @app.route('/')
 async def home(request):
     return templates.TemplateResponse('chat.html', {'request': request})
+
+@app.route('/favicon.ico')
+async def favicon(request):
+    return FileResponse('static/img/favicon.ico')
 
 @app.post('/auth')
 async def auth(request: Request):
