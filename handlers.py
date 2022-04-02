@@ -9,6 +9,6 @@ class ConnectionHandler:
         self.active_connections.append(ws)
     def disconnect(self, ws: WebSocket):
         self.active_connections.remove(ws)
-    async def broadcast(self, message: str):
+    async def broadcast(self, message: dict):
         for connection in self.active_connections:
-            await connection.send_text(message)
+            await connection.send_json(message)
