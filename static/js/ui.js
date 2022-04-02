@@ -1,5 +1,5 @@
 function keyPressHandler(e) {
-    if (e.code == "Enter") {
+    if (e.code == "Enter" && !e.shiftKey && messageBox.value.trim() != "") {
         messageText = messageBox.value
         sendMessage(messageText)
         messageBox.value = ""
@@ -7,13 +7,16 @@ function keyPressHandler(e) {
     }
 }
 
+
+
 messageBox.addEventListener("keyup", function (e) {
     previewBox.style.display = "block";
     messageText = messageBox.value
     sanitized = sanitizeHTML(messageText)
     previewBox.innerHTML = `Preview: <br> ${renderTex(sanitized)}`
-    if (messageBox.value == ""){
+    if (messageBox.value.trim() == ""){
         console.log("match found")
+        messageBox.value = ""
         previewBox.style.display = "none";
         previewBox.innerHTML = "";
     }
