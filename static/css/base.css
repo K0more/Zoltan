@@ -22,6 +22,7 @@ body{
     display: flex;
     flex-direction: column;
     width: 20%;
+    margin-right: 0.3rem;
 }
 .chat{
     display: flex;
@@ -49,8 +50,8 @@ body{
 /* Message div */
 .message{
     display: flex;
-    margin-top: 0.3rem;
-    margin-bottom: 0.3rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
 }
 .message .pfp{
     width: 3rem;
@@ -58,6 +59,7 @@ body{
     align-self: flex-start;
 }
 .message .content{
+    margin-left: 0.6rem;
     word-wrap: break-word;
     flex-grow: 1;
 }
@@ -68,6 +70,7 @@ body{
 }
 .pfp-img{
     border-radius: 50%;
+    height: 45px;
 }
 /* Interactions div */
 .interactions{

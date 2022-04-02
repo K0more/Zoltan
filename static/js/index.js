@@ -7,10 +7,10 @@ function createMessageNode(text){
     newElement.innerHTML = `
     <div class="message">
         <div class="pfp">
-        <img src="/static/img/outline_person_outline_black_24dp.png" alt="placeholder">
+        <img src="/static/img/guy.jpeg" alt="placeholder" class="pfp-img">
         </div>
         <div class="content">
-            <div class="username">WasabiTaco69</div>
+            <div class="username">Mike</div>
             ${text}
             </div>
     </div>
