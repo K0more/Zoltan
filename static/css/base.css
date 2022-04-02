@@ -1,0 +1,162 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+img{
+    object-fit: contain;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+.container{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    /* padding: 2px 5px; */
+}
+.contacts{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+.chat{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 100%;
+}
+.messages{
+    flex-grow: 1;
+    overflow: auto;
+}
+.interactions{
+    display: flex;
+    justify-self: flex-end;
+    align-items: center;
+}
+.messagebox{
+    flex-grow: 1;
+}
+
+.chat-padding{
+    height: 200px;
+}
+
+/* Message div */
+.message{
+    display: flex;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+}
+.message .pfp{
+    width: 3rem;
+    height: 3rem;
+    align-self: flex-start;
+}
+.message .content{
+    word-wrap: break-word;
+    flex-grow: 1;
+}
+.message .content .username{
+    columns: #333;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+.pfp-img{
+    border-radius: 50%;
+}
+/* Interactions div */
+.interactions{
+    margin-bottom: 0.5rem;
+}
+.interactions .messagebox{
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+    height: 2rem;
+    padding: 2px;
+}
+
+#previewBox{
+    min-height: 50px;
+    max-height: 100px;
+    overflow: auto;
+}
+
+/* Titlebar */
+.title-bar{
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    height: 3rem;
+    padding: 0.5rem;
+    border-bottom: solid 1px rgb(158, 158, 158);
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+.title-bar img{
+    height: 100%;
+}
+.title-bar h4{
+    flex-grow: 1;
+    font-weight: 400;
+    padding-left: 0.7rem;
+}
+
+/* Contacts */
+.contacts{
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.self-contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+.self-contact img{
+    height: 100%;
+    border-radius: 50%;
+    margin-right: 0.3rem;
+}
+.contact-name{
+    font-weight: 400;
+    color: rgb(0, 0, 210);
+}
+.contact-title{
+    font-weight: 400;
+}
+.searchbox{
+    width: 80%;
+    margin-bottom: 0.8rem;
+}
+.contact{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0.3rem 0.6rem;
+    height: 60px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.contact:hover{
+    background-color: rgb(198, 198, 198);
+}
+.contact img{
+    height: 100%;
+    border-radius: 50%;
+}
+.contact .details{
+    margin-left: 0.6rem;
+}
+.contact-current{
+    background-color: rgb(198, 198, 198);
+}

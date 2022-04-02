@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="static/css/base.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.css"
+    integrity="sha384-A3N+UgNMKg9+LRsC2HUE0ECxFY7qhztVFORxHQZEPm7lnog2poqmm7CQ91wSEnBc" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.js"
+    integrity="sha384-D0gipC03W+lifpletIVjX+11DUvrzNAMhVux0JrrAMt9Ufgu9HcPdS5GxZSDmNxx"
+    crossorigin="anonymous"></script>
+
+  <title>Chatroom</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="contacts">
+      <div class="self-contact">
+        <img src="static/img/guy.jpeg" alt="">
+        <div class="self-contact-details">
+          <h3 class="contact-name">Mike</h3>
+          <h4 class="contact-title">Just another guy</h4>
+        </div>
+      </div>
+
+      <input type="text" class="searchbox">
+
+      <div class="contact">
+        <img src="/static/img/guy.jpeg" alt="">
+        <div class="details">
+          <div class="contact-name">Will Smith</div>
+          <div class="contact-title">Actor</div>
+        </div>
+      </div>
+      <div class="contact contact-current">
+        <img src="/static/img/john-cena.png" alt="">
+        <div class="details">
+          <div class="contact-name">John</div>
+          <div class="contact-title">Actor</div>
+        </div>
+      </div>
+      <div class="contact">
+        <img src="/static/img/guy.jpeg" alt="">
+        <div class="details">
+          <div class="contact-name">Will Smith</div>
+          <div class="contact-title">Actor</div>
+        </div>
+      </div>
+      <div class="contact">
+        <img src="/static/img/guy.jpeg" alt="">
+        <div class="details">
+          <div class="contact-name">Will Smith</div>
+          <div class="contact-title">Actor</div>
+        </div>
+      </div>
+      <div class="contact">
+        <img src="/static/img/guy.jpeg" alt="">
+        <div class="details">
+          <div class="contact-name">Will Smith</div>
+          <div class="contact-title">Actor</div>
+        </div>
+      </div>
+      <div class="contact">
+        <img src="/static/img/guy.jpeg" alt="">
+        <div class="details">
+          <div class="contact-name">Will Smith</div>
+          <div class="contact-title">Actor</div>
+        </div>
+      </div>
+      <div class="contact">
+        <img src="/static/img/guy.jpeg" alt="">
+        <div class="details">
+          <div class="contact-name">Will Smith</div>
+          <div class="contact-title">Actor</div>
+        </div>
+      </div>
+    </div>
+    <div class="chat">
+      <div id="messages" class="messages">
+        <div class="title-bar">
+          <img src="static/img/john-cena.png" alt="John Cena">
+          <h4>John</h4>
+          <img src="/static/img/kebab-menu.png" alt="">
+        </div>
+        <div class="chat-padding"></div>
+        <div class="message">
+          <div class="pfp">
+            <img src="/static/img/outline_person_outline_black_24dp.png" alt="placeholder" class="pfp-img">
+          </div>
+          <div class="content">
+            <div class="username">WasabiTaco69</div>
+            Here message content
+          </div>
+        </div>
+      </div>
+      <div id="previewBox"></div>
+      <div class="interactions">
+        <div class="attachment"><img src="/static/img/outline_add_circle_black_24dp.png" alt="" height="35px"></div>
+        <input type="text" class="messagebox" id="messageBox">
+      </div>
+    </div>
+  </div> 
+  <script src="static/js/index.js"></script>
+  <script src="static/js/websocket.js"></script>
+  <script src="static/js/ui.js"></script>
+  <script src="static/js/rendering.js"></script>
+</body>
+
+</html>
