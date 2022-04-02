@@ -7,8 +7,6 @@ function keyPressHandler(e) {
     }
 }
 
-
-
 messageBox.addEventListener("keyup", function (e) {
     previewBox.style.display = "block";
     messageText = messageBox.value
@@ -50,8 +48,14 @@ messageBox.addEventListener("keydown", function (e) {
             for (let el of texts) {
                 if (el.startsWith(curword)) {
                     this.value = this.value.substring(0, i + 1) + el + this.value.substring(this.selectionStart, this.value.length)
-                    this.selectionStart = cur_idx + el.length - curword.length
-                    this.selectionEnd = cur_idx + el.length - curword.length
+                    let factor = 0
+                    if (el.endsWith("{}{}")){
+                        factor = 3
+                    } else if(el.endsWith("{}")){
+                        factor = 1
+                    }
+                    this.selectionStart = cur_idx + el.length - curword.length - factor
+                    this.selectionEnd = cur_idx + el.length - curword.length - factor
                 }
             }
             // console.log(restOfTheString)
@@ -66,5 +70,14 @@ messageBox.addEventListener("keydown", function (e) {
       }
     }*/
 });
+
+function showSource(inp){
+    let sourcediv = document.getElementById(`sid${inp}`)
+    if (sourcediv.style.display == "none"){
+        sourcediv.style.display = "block"
+    } else {
+        sourcediv.style.display = "none"
+    }
+}
 
 messageBox.addEventListener("keypress", keyPressHandler)

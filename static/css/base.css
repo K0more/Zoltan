@@ -72,6 +72,10 @@ body{
     border-radius: 50%;
     height: 45px;
 }
+.source{
+    display: none;
+    font-family: monospace;
+}
 /* Interactions div */
 .interactions{
     margin-bottom: 0.5rem;
@@ -81,6 +85,7 @@ body{
     margin-right: 0.3rem;
     height: 2rem;
     padding: 2px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 #previewBox{
