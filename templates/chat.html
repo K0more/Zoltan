@@ -11,11 +11,19 @@
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.3/dist/katex.js"
     integrity="sha384-D0gipC03W+lifpletIVjX+11DUvrzNAMhVux0JrrAMt9Ufgu9HcPdS5GxZSDmNxx"
     crossorigin="anonymous"></script>
-
-  <title>Chatroom</title>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <title>NewtonChat</title>
 </head>
 
 <body>
+  <div id="authOverlay">
+    <div class="authform">
+      <img src="/static/img/logo-close.png" alt="logo" height="100px" class="login-page-logo">
+      <input type="text" id="usernameField" class="loginfield" placeholder="Username">
+      <input type="password" id="passwordField" class="loginfield" placeholder="Password">
+      <button onclick="submitAuth()" class="login-btn">Login</button>
+    </div>
+  </div>
   <div class="container">
     <div class="contacts">
       <div class="self-contact">
@@ -101,15 +109,16 @@
       <div id="previewBox"></div>
       <div class="interactions">
         <div class="attachment"><img src="/static/img/outline_add_circle_black_24dp.png" alt="" height="35px"></div>
-        <textarea name="" id="messageBox" class="messagebox" onkeyup="textAreaAdjust(this)"></textarea>
+        <textarea name="" id="messageBox" class="messagebox" onkeyup="textAreaAdjust(this)" placeholder="Your glorious message goes here"></textarea>
         <!-- <input type="text" class="messagebox" id="messageBox"> -->
       </div>
     </div>
-  </div> 
+  </div>
   <script src="static/js/index.js"></script>
   <script src="static/js/websocket.js"></script>
   <script src="static/js/ui.js"></script>
   <script src="static/js/rendering.js"></script>
+  <script src="static/js/auth.js"></script>
 </body>
 
 </html>
