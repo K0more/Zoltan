@@ -14,10 +14,12 @@ cur_id = 0
 
 fake_db = {
     "Mike": {
-        "password": "fakepassword123"
+        "password": "fakepassword123",
+        "pfp": "static/img/guy.jpeg"
     },
     "John": {
-        "password": "fakepassword123"
+        "password": "fakepassword123",
+        "pfp": "static/img/john-cena.png"
     }
 }
 
@@ -46,7 +48,7 @@ async def auth(request: Request):
     if not password == user_obj['password']:
         raise HTTPException(403, "Incorrect password")
 
-    return {'data': {'username': username}}
+    return {'data': {'username': username, 'pfp': fake_db[username]['pfp']}}
 
 @app.websocket('/chat')
 async def ws_connect(ws: WebSocket):
@@ -54,8 +56,9 @@ async def ws_connect(ws: WebSocket):
     await connection_handler.connect(ws)
     try:
         while True:
-            msg = await ws.receive_text()
-            await connection_handler.broadcast({'id': cur_id, 'data': msg})
+            msg = await ws.receive_json()
+            print(msg)
+            await connection_handler.broadcast({'id': cur_id, 'data': msg, 'author': {'username': msg['author'], 'pfp': fake_db[msg['author']]['pfp']}})
             cur_id += 1
     except WebSocketDisconnect:
         connection_handler.disconnect(ws)

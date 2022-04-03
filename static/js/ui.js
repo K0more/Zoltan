@@ -1,7 +1,7 @@
 function keyPressHandler(e) {
     if (e.code == "Enter" && !e.shiftKey && messageBox.value.trim() != "") {
         messageText = messageBox.value
-        sendMessage(messageText)
+        sendMessage(messageText, curUser)
         messageBox.value = ""
         previewBox.innerHTML = ""
     }
@@ -87,4 +87,25 @@ function resetSourceCopyBtn(id){
     let btn = document.getElementById(`scb${id}`)
     btn.src = "static/img/outline_content_copy_black_18dp.png"
     btn.style.height = "15px"
+}
+
+function changeValues(inp){
+    let topLeftName = document.getElementById("topLeftName")
+    let topLeftImage = document.getElementById("topLeftImage")
+    let topLeftTag = document.getElementById("topLeftTag")
+    let curContactName = document.getElementById("curContactName")
+    let curContactTag = document.getElementById("curContactTag")
+    let curContactImage = document.getElementById("curContactImage")
+    let topNavName = document.getElementById("topNavName")
+    let topNavImg = document.getElementById("topNavImage")
+    if (inp == "John"){
+        topLeftName.innerText = "John"
+        topLeftImage.src = "static/img/john-cena.png"
+        topLeftTag.innerText = "Everything"
+        curContactName.innerText = "Mike"
+        curContactTag.innerText = "Just another guy"
+        curContactImage.src = "static/img/guy.jpeg"
+        topNavName.innerText = "Mike"
+        topNavImg.src = "static/img/guy.jpeg"
+    }
 }
