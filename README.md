@@ -1,10 +1,10 @@
 # TeamNewton_SrmHackathon
 Chat app made for SRM Hackathon
 
-Requirements:
-uvicorn 0.17.6
-fastapi 0.75.0
-jinja2  3.1.1
+Requirements:  
+uvicorn==0.17.6  
+fastapi==0.75.0  
+jinja2==3.1.1  
 
 To run:
 1. Install requirements
