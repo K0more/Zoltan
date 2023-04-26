@@ -1,10 +1,14 @@
 import handlers
+import db
 from starlette.responses import FileResponse
 from fastapi import FastAPI, HTTPException, Request, WebSocket, WebSocketDisconnect
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
+db_handler = db.DB()
+
 app = FastAPI(debug=True)
+
 
 app.mount('/static', StaticFiles(directory='static'), name='static')
 templates = Jinja2Templates('templates')
@@ -14,11 +18,11 @@ cur_id = 0
 
 fake_db = {
     "Mike": {
-        "password": "fakepassword123",
+        "password": "password123",
         "pfp": "static/img/guy.jpeg"
     },
     "John": {
-        "password": "fakepassword123",
+        "password": "password123",
         "pfp": "static/img/john-cena.png"
     }
 }
@@ -36,6 +40,12 @@ async def auth(request: Request):
     data = await request.json()
     username = data.get('username')
     password = data.get('password')
+
+    user = await db_handler.auth_user(username, password)
+
+    if not user:
+        return
+    
     data = await request.json()
     if not username or not password:
         raise HTTPException(400, "Username or password not specified")
