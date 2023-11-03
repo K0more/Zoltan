@@ -1,8 +1,8 @@
 # TeamNewton_SrmHackathon 6.0
 ## Team Members:-
-### Ashutosh Raj Sigh ( Responsible for backend integration )
-### Archit Khanna ( Responsible for frontend )
-### Nutan Kumar ( Responsible for documentation )
+- Ashutosh Raj Sigh ( Responsible for backend integration )
+- Archit Khanna ( Responsible for frontend )
+- Nutan Kumar ( Responsible for documentation )
 
 Chat app made for SRM Hackathon
 
